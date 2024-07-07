@@ -8,11 +8,11 @@ Churn refers to the phenomenon where customers discontinue their subscription to
 
 ### **1.1 Machine Learning in Churn Prediction**
 
-Machine learning plays an important role in telecom churn prediction by utilizing advanced algorithms to analyse vast datasets and understand patterns indicating churn behavior. Techniques such as decision trees, logistic regression, random forests, support vector machine, Naive Bayes etc., are employed to build predictive models that accurately forecast customer churn. These models are trained on historical data and make predictions basing on the same. Additionally, machine learning enables continuous learning and adaptation, allowing telecom companies to update their models with new data, thereby maintaining their effectiveness in dynamic market conditions. This approach not only helps in retaining customers but also provides insights for improving overall customer experience and service offerings.  
+Machine learning plays an important role in telecom churn prediction by utilizing aimg/dvanced algorithms to analyse vast datasets and understand patterns indicating churn behavior. Techniques such as decision trees, logistic regression, random forests, support vector machine, Naive Bayes etc., are employed to build predictive models that accurately forecast customer churn. These models are trained on historical data and make predictions basing on the same. Additionally, machine learning enables continuous learning and adaptation, allowing telecom companies to update their models with new data, thereby maintaining their effectiveness in dynamic market conditions. This approach not only helps in retaining customers but also provides insights for improving overall customer experience and service offerings.  
 
 ### **The Data Science Process**
 
-![](dv1.png)
+![](img/dv1.png)
 Figure 1: Data Science Process 
 
 The process of collecting raw data from the real world, cleaning and preprocessing the data, analysing the data, building machine learning models on the preprocessed data and reporting or utilizing the findings is called data science. In this project on telecom churn prediction, we began by gathering datasets from various sources, checked, analysed them and finalised the dataset. The final dataset comprised 25,000 rows and 111 columns, with all attributes being numeric. Our initial focus was on preprocessing this large dataset to facilitate effective analysis and model building. The preprocessing phase started with an in-depth examination of the dataset to understand the dependent variable (target variable), which is a binary variable indicating whether a customer churns or not. We explored the data to get some insights about it. Then we moved on to checking for null values, duplicates, zero variance variables, unique value variables and handling them properly to ensure data quality. Handling outliers was a crucial step to mitigate their impact on the model's performance. We also addressed highly correlated variables and multicollinearity issues to enhance the robustness of our models. These steps resulted in a clean and well-structured dataset ready for analysis. 
@@ -62,7 +62,7 @@ Table 1: summary statistics of ‘target’
 | top   | 0       |
 | freq  | 17083   |
 
-![](dv2.png)
+![](img/dv2.png)
 Figure 2: Histogram plots of two variables 
 
 We then tried to get some insight by checking the variables that have the same value for more than 75% of the samples, found two such and plotted their frequency distribution using matplotlib’s histogram, illustrated in Figure 1. By this we concluded the first milestone proceeding to the data preprocessing in milestone 2. 
@@ -76,7 +76,7 @@ We began by checking for missing (Null) values and duplicates, we found none. Th
 ### **3.1  Handling Outliers**
 
 Outliers, or data points that significantly deviate from the rest of the dataset. These anomalies may arise due to various factors, including measurement errors, data entry mistakes, or genuine observations that do not conform to the overall pattern of the data. They can have a notable impact on statistical analysis and machine learning models if left unaddressed. Identifying and treating outliers is thus a critical aspect of data preprocessing. Various statistical methods and visualization techniques can aid in detecting outliers. One common approach is to use summary statistics such as mean, median, and standard deviation to identify observations that fall beyond a certain threshold from the mean. Box plots, histograms, and scatter plots are graphical tools that provide visual insights into the distribution of data and help in spotting anomalies. Boxplots of all the columns are analysed, two of those are shown in Figure 3 below. 
-![](dv3.png)
+![](img/dv3.png)
 Figure 3: Boxplots of two columns 
 
 Once outliers are detected, several strategies like removal, transformation, imputation, etc., can be employed to address them, depending on the nature of the data and the specific analytical goals. Sometimes removal introduces unduly bias the analysis or compromise the representativeness of the dataset. So, we consider the following methods to handle outliers: 
@@ -163,7 +163,7 @@ F1 Score: Harmonic mean of precision and recall.
 F1 score = (2×P×R)/(P+R)
 
 The confusion matrices (with TP, FP, FN, TN) are visualized as a heatmap in Figure 4 below. 
-![](dv4.png)
+![](img/dv4.png)
 Figure 4: Heatmaps – Decision Tree models 
 
 The observation from these results is that there is only a very slight difference between the decision tree models using gini index and entropy as criteria. 
@@ -191,7 +191,7 @@ We trained the algorithm on the preprocessed dataset, by splitting it into train
 
 The model is trained using these best parameters, evaluated using different metrics and the confusion matrix (heatmap) is shown in the Figure 5. 
 
-![](dv5.png)
+![](img/dv5.png)
 Figure 5: Heatmap – Logistic Regression 
 
 We observe that logistic regression also gives similar results to decision tree model. It is predicting the target = 0 slightly more correctly and target = 1 slightly less accurately than decision tree. Also, it is performing slightly less accurately on training data and slightly more accurately on test data compared to decision tree. 
@@ -211,7 +211,7 @@ We trained the algorithm on the preprocessed dataset, by splitting it into train
 We define a parameter grid with different sets of values for: number of trees used for prediction (n_estimators), depth of trees (max_depth), and number of features considered for splitting (min_samples_split) and minimum samples at leaf node (min_samples_leaf). Proper tuning ensures the model generalizes well to unseen data, balancing bias and variance. The best parameters obtained are: {'max_depth': None, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 150} 
 
 The model is trained using these best parameters, the confusion matrix (heatmap) is illustrated in the Figure 6. 
-![](dv6.png)
+![](img/dv6.png)
 Figure 6: Heatmap – Random Forest 
 
 We observe that the random forest model outperforms other models in terms of accuracies. Compared to the decision tree model, it performs better in predicting target = 0 while, performing slightly less in predicting target = 1 values. And, compared to logistic regression model, it performs slightly less in predicting target=0 values and performs better in predicting target = 1 values. 
