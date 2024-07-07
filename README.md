@@ -228,7 +228,7 @@ We observe that the random forest model outperforms other models in terms of acc
 A comparison of these three models: Decision Tree (DT), Logistic Regression (LR), Random Forest (RF) is made in the table 8 below in terms of metrics. 
 
 Table 2: Comparison of models results 
-| Model  | Accuracy | | Precision | | | Recall | | | F1 Score | | |
+| Model  | Accuracy | Precision | Recall | F1 Score |
 |--------|----------|-----|-----------|---|---|--------|---|---|--------|---|---|
 |        | Train    | Test| 0         | 1 |   | 0      | 1 |   | 0      | 1 |   |
 | DT     | 0.7975   |0.7988| 0.84      | 0.70 | | 0.88  | 0.63 | | 0.86  | 0.66 | |
